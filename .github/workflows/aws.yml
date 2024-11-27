@@ -19,9 +19,8 @@ jobs:
         aws-region: ${{ secrets.AWS_REGION }}  # GitHub Secret for AWS Region
 
     - name: Login to Amazon ECR
-      id: login-pf-aws-ecr
-      uses: aws-actions/amazon-ecr-login@v
-          
+      uses: aws-actions/amazon-ecr-login@v1
+      
     - name: Build and push Docker image
       run: |
         docker build -t ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.ECR_REPOSITORY }}:$GITHUB_SHA .
