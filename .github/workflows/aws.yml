@@ -18,9 +18,9 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}  # GitHub Secret for AWS Secret Access Key
         aws-region: ${{ secrets.AWS_REGION }}  # GitHub Secret for AWS Region
 
-    - name: Log in to Amazon ECR
-      run: |
-        aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
+    # - name: Log in to Amazon ECR
+    #   run: |
+    #     aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
 
     - name: Build and push Docker image
       run: |
