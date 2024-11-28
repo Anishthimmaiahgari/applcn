@@ -13,7 +13,7 @@ RUN pip install --no-cache-dir flask
 EXPOSE 8080
 
 # Define environment variable
-ENV FLASK_APP=abcd.py
+ENV FLASK_APP=code.py
 
 # Run app.py when the container launches
-CMD ["python", "abcd.py"]
+CMD ["python", "code.py"]
