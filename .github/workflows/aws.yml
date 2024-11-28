@@ -63,10 +63,10 @@ jobs:
 
     - name: Deploy Docker container to EC2
       run: |
-        ssh -T -o StrictHostKeyChecking=no ec2-user@${{ secrets.EC2_PUBLIC_IP }} <<EOF
-          docker pull ${{ steps.login.outputs.registry }}/${{ secrets.ECR_REPOSITORY }}:latest
-          docker run -d --name my-app-container -p 8080:8080 ${{ steps.login.outputs.registry }}/${{ secrets.ECR_REPOSITORY }}:latest
-        EOF
+        #  ssh -T -o StrictHostKeyChecking=no ec2-user@${{ secrets.EC2_PUBLIC_IP }} <<EOF
+           docker pull ${{ steps.login.outputs.registry }}/${{ secrets.ECR_REPOSITORY }}:latest
+           docker run -d --name my-app-container -p 8080:8080 ${{ steps.login.outputs.registry }}/${{ secrets.ECR_REPOSITORY }}:latest
+        #  EOF
 
 # name: Build and Deploy Containerized App to EC2
 # on:
